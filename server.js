@@ -9,7 +9,7 @@ var express = require('express'),
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost/QuizDB'); 
-mongoose.connect('mongodb+srv://dkashmensky:Nap66n7j@quizappdb-tb5pi.mongodb.net/test?retryWrites=true&w=majority/QuizDB');
+mongoose.connect('mongodb+srv://dkashmensky:Nap66n7j@quizappdb-tb5pi.mongodb.net/QuizDB');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
