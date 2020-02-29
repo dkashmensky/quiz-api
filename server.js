@@ -3,6 +3,7 @@ var express = require('express'),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
   User = require('./api/models/userModel'), //created model loading here
+  Category = require('./api/models/categoryModel')
   bodyParser = require('body-parser'),
   cors = require('cors');
   
@@ -24,4 +25,4 @@ routes(app); //register the route
 app.listen(port);
 
 
-console.log('todo list RESTful API server started on: ' + port);
+console.log('Quiz RESTful API server started on: ' + port);
