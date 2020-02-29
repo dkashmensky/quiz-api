@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 
 
 exports.get_users = function(req, res) {
-  User.find({}, function(err, users) {
+  User.find({}, (err, users) => {
     if(err) {
       res.send(err);
     }
@@ -13,10 +13,9 @@ exports.get_users = function(req, res) {
   });
 };
 
-
 exports.create_user = function(req, res) {
-  var new_user = new User(req.body);
-  new_user.save(function(err, user) {
+  let newUser = new User(req.body);
+  newUser.save((err, user) => {
     if (err) {
       res.send(err);
     }
@@ -25,22 +24,12 @@ exports.create_user = function(req, res) {
   });
 };
 
-
 exports.get_user = function(req, res) {
-  User.findOne({id: req.params.userId}, function(err, user) {
+  User.findOne({id: req.params.userId}, (err, user) => {
     if (err) {
       res.send(err);
     }
   
-    res.json(user);
-  });
-};
-
-
-exports.update_user = function(req, res) {
-  User.findOneAndUpdate({_id: req.params.userId}, req.body, {new: true}, function(err, user) {
-    if (err)
-      res.send(err);
     res.json(user);
   });
 };
